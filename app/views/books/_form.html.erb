@@ -8,7 +8,6 @@
   </div>
   <div class="mb-3">
     <%= form.label :author_id, class: "form-label" %>
-    <%# <%= form.text_field :author_id, class: "form-control" %>
     <%= form.collection_select :author_id, Author.all, :id, :name %>
   </div>
   <div class="d-grid gap-2 d-md-flex justify-content-md-end">
