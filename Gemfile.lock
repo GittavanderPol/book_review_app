@@ -46,6 +46,9 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
+    active_link_to (1.0.5)
+      actionpack
+      addressable
     activejob (7.0.4.3)
       activesupport (= 7.0.4.3)
       globalid (>= 0.3.6)
@@ -72,6 +75,9 @@ GEM
     bootsnap (1.16.0)
       msgpack (~> 1.2)
     builder (3.2.4)
+    bullet (7.0.7)
+      activesupport (>= 3.0.0)
+      uniform_notifier (~> 1.11)
     capybara (3.39.1)
       addressable
       matrix
@@ -190,6 +196,7 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    uniform_notifier (1.16.0)
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -211,7 +218,9 @@ PLATFORMS
   arm64-darwin-22
 
 DEPENDENCIES
+  active_link_to
   bootsnap
+  bullet
   capybara
   cssbundling-rails
   debug

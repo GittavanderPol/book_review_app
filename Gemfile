@@ -73,3 +73,7 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem 'active_link_to'
+
+gem 'bullet', group: 'development'

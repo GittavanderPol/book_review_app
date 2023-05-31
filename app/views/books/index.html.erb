@@ -1,7 +1,7 @@
 <div class="container">
   <div class="d-flex justify-content-between align-items-center">
-    <h1>Authors</h1>
-    <%= link_to "Add new author", new_author_path, class: "btn btn-primary" %>
+    <h1>Books</h1>
+    <%= link_to "Add new book", new_book_path, class: "btn btn-primary" %>
   </div>
   <div class="card">
     <div class="card-body">
@@ -9,16 +9,16 @@
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Number of books</th>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
           </tr>
         </thead>
         <tbody>
-          <% @authors.each do |author| %>
+          <% @books.each do |book| %>
             <tr>
-              <th scope="row"><%= author.id %></th>
-              <td><%= link_to author.name, author %></td>
-              <td><%= author.books_count %></td>
+              <th scope="row"><%= book.id %></th>
+              <td><%= link_to book.title, book %></td>
+              <td><%= link_to book.author.name, book.author %></td>
             </tr>
           <% end %>
         </tbody>
