@@ -1,8 +1,10 @@
 class BooksController < ApplicationController
+  include Pagy::Backend
+
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   def index
-    @books = Book.includes(:author).all
+    @pagy, @books = pagy(Book.includes(:author).all)
   end
 
   def new

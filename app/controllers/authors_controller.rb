@@ -1,8 +1,10 @@
 class AuthorsController < ApplicationController
+  include Pagy::Backend
+
   before_action :set_author, only: [:edit, :update, :destroy]
 
   def index
-    @authors = Author.all
+    @pagy, @authors = pagy(Author.all)
   end
 
   def show
