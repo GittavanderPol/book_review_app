@@ -76,4 +76,6 @@ end
 
 gem 'active_link_to'
 
+gem 'pagy', '~> 6.0'
+
 gem 'bullet', group: 'development'
