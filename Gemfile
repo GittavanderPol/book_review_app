@@ -74,8 +74,8 @@ group :test do
   gem "webdrivers"
 end
 
-gem 'active_link_to'
+gem "active_link_to"
 
-gem 'pagy', '~> 6.0'
+gem "pagy", "~> 6.0"
 
-gem 'bullet', group: 'development'
+gem "bullet", group: "development"
