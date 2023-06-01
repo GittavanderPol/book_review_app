@@ -1,11 +1,17 @@
 class AuthorsController < ApplicationController
   include Pagy::Backend
   include SessionsHelper
+  include ActiveRecord::Sanitization
 
   before_action :set_author, only: [:edit, :update, :destroy]
 
   def index
-    @pagy, @authors = pagy(Author.all)
+    @query = params[:query]
+
+    @authors = Author.all
+    @authors = @authors.find_by_name(@query) if @query
+
+    @pagy, @authors = pagy(@authors)
   end
 
   def show
