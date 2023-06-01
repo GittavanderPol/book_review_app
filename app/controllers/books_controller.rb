@@ -1,10 +1,12 @@
 class BooksController < ApplicationController
   include Pagy::Backend
+  include SessionsHelper
 
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   def index
     @pagy, @books = pagy(Book.includes(:author).all)
+    store_redirect_url(:add_book)
   end
 
   def new
@@ -15,7 +17,7 @@ class BooksController < ApplicationController
     @book = Book.new(book_params)
 
     if @book.save
-      redirect_to book_path(@book)
+      redirect_back_or(:add_book, books_path)
     else
       render :new, status: :unprocessable_entity
     end

@@ -1,5 +1,6 @@
 class AuthorsController < ApplicationController
   include Pagy::Backend
+  include SessionsHelper
 
   before_action :set_author, only: [:edit, :update, :destroy]
 
@@ -9,6 +10,7 @@ class AuthorsController < ApplicationController
 
   def show
     @author = Author.includes(:books).find(params[:id])
+    store_redirect_url(:add_book)
   end
 
   def new
