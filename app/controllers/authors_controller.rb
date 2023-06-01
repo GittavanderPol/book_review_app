@@ -9,7 +9,11 @@ class AuthorsController < ApplicationController
   end
 
   def show
-    @author = Author.includes(:books).find(params[:id])
+    begin
+      @author = Author.includes(:books).find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      render_not_found
+    end
     store_redirect_url(:add_book)
   end
 
@@ -47,6 +51,8 @@ class AuthorsController < ApplicationController
 
   def set_author
     @author = Author.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    render_not_found
   end
 
   def author_params
