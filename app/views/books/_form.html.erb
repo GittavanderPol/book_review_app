@@ -9,6 +9,7 @@
   <div class="mb-3">
     <%= form.label :author_id, class: "form-label" %>
     <%= form.collection_select :author_id, Author.all, :id, :name %>
+    <%= link_to "Add new author", new_author_path, class: "btn btn-outline-primary btn-sm order-md-2" %>
   </div>
   <div class="d-grid gap-2 d-md-flex justify-content-md-end">
     <%= form.submit class: "btn btn-primary order-md-2" %>
