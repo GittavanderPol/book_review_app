@@ -5,6 +5,10 @@
   </div>
   <div class="card">
     <div class="card-body">
+      <%= form_with url: books_path, method: :get, class: "d-flex", html: { role: "search" } do |form| %>
+        <%= form.text_field :query, value: @query, class: "form-control me-2", type: "search", placeholder: "Search", "aria-label": "Search" %>
+        <%= form.submit "Search", class: "btn btn-outline-success" %>
+      <% end %>
       <table class="table table-striped">
         <thead>
           <tr>

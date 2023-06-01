@@ -5,7 +5,12 @@ class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   def index
-    @pagy, @books = pagy(Book.includes(:author).all)
+
+    @query = params[:query]
+    @books = Book.includes(:author).all
+    @books = @books.find_by_title(@query) if @query
+
+    @pagy, @books = pagy(@books)
     store_redirect_url(:add_book)
   end
 
