@@ -1,7 +1,6 @@
 class AuthorsController < ApplicationController
   include Pagy::Backend
   include SessionsHelper
-  include ActiveRecord::Sanitization
 
   before_action :set_author, only: [:edit, :update, :destroy]
 
