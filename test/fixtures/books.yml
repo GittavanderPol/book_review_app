@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+the_new_world:
+  author: maine
+  title: The new world
+
+history_explained:
+  author: steward
+  title: History explained

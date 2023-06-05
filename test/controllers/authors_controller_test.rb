@@ -28,26 +28,27 @@ class AuthorsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should show author" do
-    author = authors(:first)
+    author = authors(:maine)
     get author_path(author)
-    assert_select "h1", "Jake Olson"
+    assert_select "h1", "James Maine"
   end
 
   test "should edit author" do
-    author = authors(:first)
+    author = authors(:maine)
     get author_path(author)
-    assert_select "h1", "Jake Olson"
-    patch author_path, params: { author: { name: "Jane Olson" } }
+    assert_select "h1", "James Maine"
+    patch author_path, params: { author: { name: "Jane Maine" } }
     assert_redirected_to author_path(author)
     follow_redirect!
-    assert_select "h1", "Jane Olson"
+    assert_select "h1", "Jane Maine"
   end
 
   test "should destroy author" do
-    author = authors(:first)
+    author = authors(:maine)
 
     assert_difference("Author.count", -1) do
       delete author_path(author)
+      assert_not Author.exists?(author.id)
     end
 
     assert_redirected_to authors_path

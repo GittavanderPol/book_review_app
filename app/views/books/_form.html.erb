@@ -1,0 +1,18 @@
+
+<%= form_with model: @book do |form| %>
+  <%= render partial: "shared/error_messages", locals: { model: @book } %>
+
+  <div class="mb-3">
+    <%= form.label :title, class: "form-label" %>
+    <%= form.text_field :title, class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :author_id, class: "form-label" %>
+    <%= form.collection_select :author_id, Author.all, :id, :name %>
+    <%= link_to "Add new author", new_author_path, class: "btn btn-outline-primary btn-sm" %>
+  </div>
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <%= form.submit class: "btn btn-primary order-md-2" %>
+    <%= link_to "Cancel", :back, class: "btn btn-outline-secondary order-md-1" %>
+  </div>
+<% end %>

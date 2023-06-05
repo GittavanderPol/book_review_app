@@ -1,7 +1,7 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-first:
-  name: Jake Olson
+maine:
+  name: James Maine
 
-second:
-  name: Timmina Part
+steward:
+  name: Kylie Steward

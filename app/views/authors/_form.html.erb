@@ -1,6 +1,6 @@
 
 <%= form_with model: @author do |form| %>
-  <%= render partial: "authors/error_messages", locals: { author: @author } %>
+  <%= render partial: "shared/error_messages", locals: { model: @author } %>
 
   <div class="mb-3">
     <%= form.label :name, class: "form-label" %>

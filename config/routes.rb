@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   # get "/authors", to: "authors#index"
 
   resources :authors
+  resources :books
 end
